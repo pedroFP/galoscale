@@ -1,0 +1,111 @@
+.main-bg-color {
+  background-color: #1a428a;
+  color: white;
+}
+
+.secondary-bg-color {
+  background-color: #db303c !important;
+  color: white;
+}
+
+.terciary-bg-color {
+  background-color: #fde405;
+}
+
+.btn-primary {
+  background-color: #1a428a;
+  border-color: #1a428a;
+}
+.btn-primary:hover {
+  background-color: #163a72;
+  border-color: #163a72;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.features-section {
+  position: relative; /* Establish a context for the pseudo-element */
+  color: white; /* Ensure text remains visible */
+  padding: 100px 20px;
+  z-index: 1; /* Ensure content is above the overlay */
+  overflow: hidden; /* Prevent pseudo-element overflow if needed */
+}
+
+.features-section::before {
+  content: ""; /* Required to render the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark overlay */
+  background-image: url("images/profesional-que-conduce-maquina.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1; /* Place the overlay behind content */
+}
+
+.hero-section {
+  background: url("images/background_worker.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-section h1,
+.hero-section p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  /* Subtle shadow for readability */
+}
+
+.footer {
+  background-color: #1a428a;
+  color: white;
+  padding: 20px 0;
+}
+
+.about-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+}
+h2 {
+  font-size: 2.5rem;
+
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.card {
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card-body small {
+  font-style: italic;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .card img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .row.g-0 {
+    flex-direction: column;
+  }
+}
