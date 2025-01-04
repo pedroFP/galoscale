@@ -22,43 +22,79 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Sans-serif;
 }
 
 .features-section {
-  position: relative; /* Establish a context for the pseudo-element */
-  color: white; /* Ensure text remains visible */
-  padding: 100px 20px;
-  z-index: 1; /* Ensure content is above the overlay */
-  overflow: hidden; /* Prevent pseudo-element overflow if needed */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-image: url("images/profesional-que-conduce-maquina.jpg");
+}
+
+.features-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .features-section::before {
-  content: ""; /* Required to render the pseudo-element */
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark overlay */
-  background-image: url("images/profesional-que-conduce-maquina.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: -1; /* Place the overlay behind content */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1;
 }
 
 .hero-section {
   background: url("images/background_worker.jpg") no-repeat center center/cover;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   text-align: center;
-  padding: 100px 20px;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-section h1,
 .hero-section p {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: Roboto;
   /* Subtle shadow for readability */
+}
+
+.hero-section h1 {
+  font-weight: bold;
 }
 
 .footer {
@@ -108,4 +144,76 @@ h2 {
   .row.g-0 {
     flex-direction: column;
   }
+}
+
+.roboto-thin {
+  font-family: "Roboto", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-style: italic;
 }
