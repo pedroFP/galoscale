@@ -43,18 +43,21 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section text-center py-5">
-    <div class="container">
+  <section class="video-background">
+    <div class="video-container">
+      <div id="video-player"></div>
+    </div>
+    <div class="video-overlay"></div>
+    <div class="content text-center text-white">
       <img src="./images/LOGO_GALOSCALE.png" alt="Galo Scale Logo" class="hero-image img-fluid mb-4">
-
-      <p class="lead fw-bold">
+      <p class="lead">
         SOLUCIONES DE PESO<br>
         EXACTITUD Y PERFECCIÓN EN PESAJE INDUSTRIAL
       </p>
       <a href="#about" class="btn btn-primary btn-lg">Conoce más</a>
     </div>
   </section>
+
 
   <!-- About section -->
   <section id="about" class="about-section text-center">
@@ -269,8 +272,11 @@
                 <i class="bi bi-envelope-fill"></i>
               </div>
               <p class="card-text mt-3">
-                ventas@galoscale.cl
+                <a href="mailto:ventas@galoscale.cl" class="text-decoration-none">
+                  ventas@galoscale.cl
+                </a>
               </p>
+
             </div>
           </div>
         </div>
@@ -349,5 +355,33 @@
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let player;
+
+  // Initialize YouTube Player API
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-player', {
+      videoId: 'R86MBhwnKWE', // Replace with your video ID
+      playerVars: {
+        'autoplay': 1,        // Enable autoplay
+        'controls': 0,        // Hide controls
+        'rel': 0,             // Disable related videos
+        'loop': 1,            // Enable looping
+        'playlist': 'R86MBhwnKWE', // Required for seamless looping
+        'mute': 1,            // Mute the video (required for autoplay in most browsers)
+      },
+      events: {
+        'onReady': onPlayerReady,
+      },
+    });
+  }
+
+  // Play video automatically when the player is ready
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+</script>
 
 </html>
