@@ -38,6 +38,12 @@ body {
   text-align: center;
   background-image: url("images/profesional-que-conduce-maquina.jpg");
 }
+@media (max-width: 768px) {
+  .features-section {
+    height: 100%; /* Adjust height for small devices */
+    padding: 15px;
+  }
+}
 
 .features-section .container {
   position: relative;
