@@ -3,6 +3,13 @@
   color: white;
 }
 
+.list-group-item.active {
+  z-index: 2;
+  background-color: #1a428a !important;
+  color: white;
+  border-color: #1a428a !important;
+}
+
 .secondary-bg-color {
   background-color: #db303c !important;
   color: white;

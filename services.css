@@ -35,10 +35,7 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  text-align: center;
 }
 
 .tech-lab-hero-section::before {
