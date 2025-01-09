@@ -43,7 +43,7 @@ body {
   align-items: center;
   color: white;
   text-align: center;
-  background-image: url("images/profesional-que-conduce-maquina.jpg");
+  background-image: url("../images/profesional-que-conduce-maquina.jpg");
 }
 @media (max-width: 768px) {
   .features-section {
@@ -69,7 +69,7 @@ body {
 }
 
 .hero-section {
-  background: url("images/team.jpg") no-repeat center center/cover;
+  background: url("../images/team.jpg") no-repeat center center/cover;
   position: relative;
   width: 100%;
   height: 50vh;
