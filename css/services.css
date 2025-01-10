@@ -1,5 +1,6 @@
 .service-hero-section {
-  background: url("../images/background_worker.jpg") no-repeat center center/cover;
+  background: url("../images/background_worker.jpg") no-repeat center
+    center/cover;
   position: relative;
   width: 100%;
   height: 50vh;
@@ -29,7 +30,7 @@
 }
 
 .tech-lab-hero-section {
-  background: url("images/dibujos.jpg") no-repeat center center/cover;
+  background: url("../images/dibujos.jpg") no-repeat center center/cover;
   position: relative;
   width: 100%;
   background-size: cover;
