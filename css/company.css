@@ -108,3 +108,29 @@
   position: relative;
   z-index: 2;
 }
+
+section.technical-service {
+  background: url("../images/transpaleta.jpg") no-repeat center center/cover;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+section.technical-service::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+section.technical-service .hero-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: Roboto;
+}

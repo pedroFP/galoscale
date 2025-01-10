@@ -287,7 +287,7 @@ h2 {
 }
 
 .divider {
-  height: 50px;
+  height: 2.3rem;
   background: linear-gradient(135deg, #1a428a 50%, #1a428a 50%);
   clip-path: polygon(0 0, 20% 100%, 100% 0);
 }
