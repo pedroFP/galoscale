@@ -228,16 +228,39 @@
               <input type="hidden" name="access_key" value="87395026-bdf3-479c-9306-6a53d4ff1b3c">
 
               <!-- Form Inputs. Each input must have a name="" attribute -->
-              <div class="mb-3">
-                <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="user-name">
+                      <i class="bi bi-person-fill"></i>
+                    </span>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" aria-label="Nombre"
+                      aria-describedby="user-name" required>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="user-phone">
+                      <i class="bi bi-telephone-fill"></i>
+                    </span>
+                    <input type="text" name="telefono" class="form-control" placeholder="Teléfono" aria-label="Teléfono"
+                      aria-describedby="user-phone" required>
+                  </div>
+                </div>
               </div>
 
               <div class="mb-3">
-                <input type="email" name="email" class="form-control" placeholder="Correo" required>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="user-email">
+                    <i class="bi bi-envelope-fill"></i>
+                  </span>
+                  <input type="email" name="correo" class="form-control" placeholder="Correo" aria-label="Correo"
+                    aria-describedby="user-email" required>
+                </div>
               </div>
 
               <div class="mb-3">
-                <textarea name="message" class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                <textarea name="mensaje" class="form-control" rows="5" placeholder="Mensaje" required></textarea>
               </div>
 
               <!-- Honeypot Spam Protection -->
