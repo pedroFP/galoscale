@@ -221,25 +221,37 @@
         <div class="container">
           <h2 class="text-center mb-4">Contáctanos</h2>
           <div class="row justify-content-center">
+            <form action="https://api.web3forms.com/submit" method="POST">
 
-            <form action="mailto:ventas@galoscale.cl" method="post" enctype="text/plain">
+              <!-- Replace with your Access Key -->
+              <input type="hidden" name="access_key" value="87395026-bdf3-479c-9306-6a53d4ff1b3c">
+
+              <!-- Form Inputs. Each input must have a name="" attribute -->
               <div class="mb-3">
-                <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" name="name" class="form-control" placeholder="Nombre" required>
               </div>
+
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" name="email" class="form-control" placeholder="Correo" required>
               </div>
+
               <div class="mb-3">
-                <label for="message" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="message" rows="5"></textarea>
+                <textarea name="message" class="form-control" rows="5" placeholder="Mensaje" required></textarea>
               </div>
+
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <!-- Custom Confirmation / Success Page -->
+              <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
 
               <div class="d-flex justify-content-center align-items-center">
-
-                <button type="submit" class="mb-3 btn btn-primary">Enviar</button>
+                <button type="submit" class="mb-3 btn btn-primary">
+                  Enviar
+                  <i class="bi bi-send ms-2"></i>
+                </button>
               </div>
+
             </form>
           </div>
         </div>
