@@ -1,0 +1,36 @@
+.idi-hero-section {
+  background: url("../images/dibujos.jpg") no-repeat center center/cover;
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.idi-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+.idi-hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.idi-hero-section h1,
+.idi-hero-section p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: Roboto;
+  /* Subtle shadow for readability */
+}

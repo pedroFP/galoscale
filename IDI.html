@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="css/index.css" rel="stylesheet">
-  <link href="css/company.css" rel="stylesheet">
+  <link href="css/idi.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -55,18 +55,93 @@
   </nav>
 
   <!-- Hero Section -->
-  <section>
-    <div class="container">
-      <h1 class="display-4">I+D+I</h1>
-      <p class="lead">
-        Esta página estará dedicada al proyecto de biorrecatores. Es esta sección, subiremos información
-        del proyecto, fotografías del biorreactor y los documentos que Corfo solicita que están publicados
-        en la web de la empresa. (que se puedan visualizar, pero no descargar)
-      </p>
+  <section class="idi-hero-section py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">I+D+I</h1>
+      <p class="lead">Investigación, desarrollo e innovación </p>
     </div>
   </section>
 
   <div class="safety-tape" style="height: 2rem;"></div>
+
+  <!-- Documents -->
+  <section class="pdf-catalogue py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-xl-6">
+
+          <div class="pdf-section mb-5">
+            <h3 class="text-center fw-bold display-6 ">Balance General</h3>
+            <p class="text-center">Balance General al 31 de Diciembre del 2022</p>
+            <div class="pdf-container">
+              <iframe src="pdfs/Balance-General-al-31-dic2022.pdf" width="100%" height="600px" style="border: none;">
+              </iframe>
+            </div>
+            <div class="pdf-link text-center">
+              <a href="pdfs/Balance-General-al-31-dic2022.pdf" class="btn btn-lg btn-danger">
+                Revisar Balance General
+                <i class="bi bi-file-earmark-text-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="pdf-section mb-5">
+            <h3 class="text-center fw-bold display-6 ">Info Web Galo CORFO</h3>
+            <p class="text-center">
+              Proyecto ingeniería sustentable para la implementación de
+              un sistema de biorreactores para el tratamiento y
+              reutilización de aguas mineras, 23IATS-248301.
+            </p>
+
+            <div class="pdf-container">
+              <iframe src="pdfs/INFO-WEBGALO.pdf" width="100%" height="600px" style="border: none;">
+              </iframe>
+            </div>
+            <div class="pdf-link text-center">
+              <a href="pdfs/INFO-WEBGALO.pdf" class="btn btn-lg btn-danger">
+                Revisar Web Galo CORFO
+                <i class="bi bi-file-earmark-text-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-xl-6">
+          <div class="pdf-section mb-5">
+            <h3 class="text-center fw-bold display-6 ">Estado de resultados</h3>
+            <p class="text-center">Del 1ro de Enero al 31 de Diciembre 2022</p>
+            <div class="pdf-container">
+              <iframe src="pdfs/EdoRdo-al-31-Dic2022.pdf" width="100%" height="600px" style="border: none;">
+              </iframe>
+            </div>
+            <div class="pdf-link text-center">
+              <a href="pdfs/EdoRdo-al-31-Dic2022.pdf" class="btn btn-lg btn-danger">
+                Revisar Estado de Resultados
+                <i class="bi bi-file-earmark-text-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="pdf-section mb-5">
+            <h3 class="text-center fw-bold display-6 ">Subsidio 23IATS/248301</h3>
+            <p class="text-center">Carta de Notificacion de Subsidio 23IATS/248301</p>
+            <br>
+            <div class="pdf-container">
+              <iframe src="pdfs/CARTA-DE-NOTIFICACION-DE-SUBSIDIO-23IATS-248301.pdf" width="100%" height="600px"
+                style="border: none;">
+              </iframe>
+            </div>
+            <div class="pdf-link text-center">
+              <a href="pdfs/CARTA-DE-NOTIFICACION-DE-SUBSIDIO-23IATS-248301.pdf" class="btn btn-lg btn-danger">
+                Revisar Carta de Notificacion
+                <i class="bi bi-file-earmark-text-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer text-center py-4 text-light">
