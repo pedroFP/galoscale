@@ -32,7 +32,9 @@
   border-color: #163a72;
 }
 
-body {
+h1,
+h2,
+nav {
   font-family: Sans-serif;
 }
 
