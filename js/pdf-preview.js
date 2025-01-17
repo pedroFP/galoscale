@@ -27,7 +27,7 @@ function renderPDF(url, container) {
       container.querySelector(".pdf-loader").remove();
     })
     .catch((error) => {
-      container.textContent = "Failed to load PDF: " + error.message;
+      console.log("Failed to load PDF: " + error.message);
     });
 }
 
