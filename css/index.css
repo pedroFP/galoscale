@@ -298,18 +298,6 @@ h2 {
   );
 }
 
-@media (max-width: 768px) {
-  section.pdf-catalogue .pdf-container {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  section.pdf-catalogue .pdf-link {
-    display: none;
-  }
-}
-
 .divider {
   height: 2.3rem;
   background: linear-gradient(135deg, #1a428a 50%, #1a428a 50%);
