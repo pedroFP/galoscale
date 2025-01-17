@@ -35,6 +35,7 @@ document.querySelectorAll(".pdf-file").forEach((container) => {
   const url = container.getAttribute("data-url"); // Get the PDF URL
   if (url) {
     renderPDF(url, container); // Call the render function
+    container.querySelector(".spinner-border").remove();
   } else {
     container.textContent = "No PDF URL provided.";
   }
