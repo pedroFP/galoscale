@@ -80,3 +80,10 @@
   position: relative;
   z-index: 2;
 }
+
+.service-hero-section h1,
+.service-hero-section p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: Roboto;
+  /* Subtle shadow for readability */
+}
