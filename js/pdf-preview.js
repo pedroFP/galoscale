@@ -24,7 +24,7 @@ function renderPDF(url, container) {
           });
         });
       }
-      container.querySelector(".spinner-border").remove();
+      container.querySelector(".pdf-loader").remove();
     })
     .catch((error) => {
       container.textContent = "Failed to load PDF: " + error.message;
