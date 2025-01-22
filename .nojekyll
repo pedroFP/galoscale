@@ -1,5 +1,9 @@
-/IDI/ /IDI 301
-/catalogo/ /catalogo 301
-/index/ /index 301
-/empresa/ /empresa 301
-/servicio-y-producto/ /servicio-y-producto 301
+catalogo/index.html
+index/index.html
+empresa/index.html
+servicio-y-producto/index.html
+
+mkdir -p catalogo && touch catalogo/index.html
+mkdir -p index && touch index/index.html
+mkdir -p empresa && touch empresa/index.html
+mkdir -p servicio-y-producto && touch servicio-y-producto/index.html
