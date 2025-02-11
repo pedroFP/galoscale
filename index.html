@@ -36,6 +36,7 @@
     })(window, document, 'script', 'dataLayer', 'GTM-TXMHX8VC');</script>
   <!-- End Google Tag Manager -->
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -252,7 +253,7 @@
         <div class="container">
           <h2 class="text-center mb-4">Contáctanos</h2>
           <div class="row justify-content-center">
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
               <input type="hidden" name="subject" value="Cotización web">
 
               <input type="hidden" name="access_key" value="87395026-bdf3-479c-9306-6a53d4ff1b3c">
@@ -296,11 +297,7 @@
                 <textarea name="mensaje" class="form-control" rows="5" placeholder="Mensaje" required></textarea>
               </div>
 
-              <!-- Honeypot Spam Protection -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-              <!-- Custom Confirmation / Success Page -->
-              <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+              <div class="g-recaptcha" data-sitekey="6LcLTNQqAAAAAC8vy07zd-QFGXSEH9JKePg-Np5D"></div>
 
               <div class="d-flex justify-content-center align-items-center">
                 <button type="submit" class="mb-3 btn btn-primary">
@@ -409,6 +406,17 @@
     target="_blank">
     <i class="bi bi-whatsapp"></i>
   </a>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      var captchaResponse = grecaptcha.getResponse();
+
+      if (!captchaResponse) {
+        alert("Por favor complete el CAPTCHA antes de enviar el formulario.");
+        event.preventDefault(); // Stop form submission
+      }
+    });
+  </script>
 
 </body>
 
