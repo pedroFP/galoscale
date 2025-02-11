@@ -252,7 +252,7 @@
         <div class="container">
           <h2 class="text-center mb-4">Contáctanos</h2>
           <div class="row justify-content-center">
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
               <input type="hidden" name="subject" value="Cotización web">
 
               <input type="hidden" name="access_key" value="87395026-bdf3-479c-9306-6a53d4ff1b3c">
@@ -411,6 +411,21 @@
   </a>
 
   <script src="https://web3forms.com/client/script.js" async defer></script>
+
+  <script>
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function (e) {
+
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+      if (!hCaptcha) {
+        e.preventDefault();
+        alert("Por favor rellene el Captcha")
+        return
+      }
+    });
+  </script>
 </body>
 
 <!-- Bootstrap Bundle with Popper -->
