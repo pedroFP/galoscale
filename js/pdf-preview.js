@@ -1,34 +1,50 @@
-// Function to render a single PDF into a container
-function renderPDF(url, container) {
-  const loadingTask = pdfjsLib.getDocument(url);
-  loadingTask.promise
-    .then((pdf) => {
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        pdf.getPage(pageNum).then((page) => {
-          const viewport = page.getViewport({ scale: 1.5 });
-          const canvas = document.createElement("canvas");
-          canvas.style.marginBottom = "16px"; // Optional: space between pages
-          canvas.style.maxWidth = "100%"; // Optional: space between pages
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-          canvas.classList.add("pdf-sheet");
+/**
+ * Render a PDF into a container using PDF.js
+ * @param {string|TypedArray|PDFDataRangeTransport} url - PDF source for pdfjsLib.getDocument
+ * @param {HTMLElement} container - Element that will receive page canvases
+ * @param {Object} [options]
+ * @param {number} [options.scale=1.5] - Render scale
+ * @param {string} [options.className='pdf-sheet'] - CSS class for each canvas
+ */
+async function renderPDF(url, container, options = {}) {
+  const { scale = 1.5, className = "pdf-sheet" } = options;
 
-          const context = canvas.getContext("2d");
-          const renderContext = {
-            canvasContext: context,
-            viewport: viewport,
-          };
+  let loadingTask;
+  try {
+    loadingTask = pdfjsLib.getDocument(url);
+    const pdf = await loadingTask.promise;
 
-          page.render(renderContext).promise.then(() => {
-            container.appendChild(canvas);
-          });
-        });
-      }
-      container.querySelector(".pdf-loader").remove();
-    })
-    .catch((error) => {
-      console.log("Failed to load PDF: " + error.message);
-    });
+    // Render all pages in parallel, then append in order
+    const canvases = await Promise.all(
+      Array.from({ length: pdf.numPages }, async (_, i) => {
+        const pageNum = i + 1;
+        const page = await pdf.getPage(pageNum);
+
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement("canvas");
+        canvas.width = viewport.width;
+        canvas.style.maxWidth = "100%";
+        canvas.height = viewport.height;
+        canvas.classList.add(className);
+
+        const ctx = canvas.getContext("2d");
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        return canvas;
+      })
+    );
+
+    // Batch DOM writes for performance
+    const frag = document.createDocumentFragment();
+    canvases.forEach((c) => frag.appendChild(c));
+    container.appendChild(frag);
+  } catch (err) {
+    console.error("Failed to load or render PDF:", err);
+  } finally {
+    // Remove loader if present
+    const loader = container.querySelector(".pdf-loader");
+    if (loader) loader.remove();
+  }
 }
 
 // Select all PDF containers and render each PDF
