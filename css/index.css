@@ -331,3 +331,52 @@ h2 {
   position: relative;
   z-index: 24;
 }
+
+/* Container holds all pages */
+.pdf-page-holder {
+  position: relative;
+  margin-bottom: 16px;
+  max-width: 100%;
+}
+
+/* Intrinsic ratio box prevents layout shift before canvas loads */
+.pdf-page-sizer {
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Absolutely place the canvas on top of the ratio box */
+.pdf-page-content {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
+
+/* Your existing canvas styling */
+.pdf-sheet {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Optional: lightweight skeleton before render */
+.pdf-page-holder:not(.pdf-page-rendered) .pdf-page-content::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #f2f2f2 0,
+    #f2f2f2 8px,
+    #e9e9e9 8px,
+    #e9e9e9 16px
+  );
+  border-radius: 4px;
+}
+
+/* Inline error */
+.pdf-error {
+  color: #b00020;
+  font: 14px/1.4 system-ui, sans-serif;
+  padding: 8px 0;
+}
